@@ -33,3 +33,15 @@
   padding-top: 0.35em;
   height: 2em;
 }
+/* Item Page */
+.ItemPage {
+}
+
+/* Item */
+.Item {
+  display: flex;
+  background-color: moccasin;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 1em;
+}
