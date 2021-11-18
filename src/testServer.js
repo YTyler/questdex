@@ -31,7 +31,7 @@ const server = setupServer(
     }),
 );
 
-const handleRequest = (method, endpoint, statusCode, json) => {
+const handleApiCall = (method, endpoint, statusCode, json) => {
     server.use( 
         rest[method](endpoint, (req, res, ctx) => res(
             ctx.status(statusCode), 
@@ -44,4 +44,4 @@ beforeAll(() => server.listen());
 afterAll(() => server.close());
 afterEach(() => server.resetHandlers());
 
-export { server, rest, handleRequest };
+export { server, rest, handleApiCall };
