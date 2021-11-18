@@ -17,12 +17,12 @@
 /* Navbar */
 .Navbar {
   display: flex;
-  font-size: 4rem;
+  font-size: 5rem;
   color: rgb(221, 198, 89);
   text-align: start;
   background-image: linear-gradient(
     0deg,
-    rgb(136, 0, 21) 75%,
+    rgb(136, 0, 21) 80%,
     rgb(161, 61, 76) 90%,
     rgb(170, 96, 107)
   );
