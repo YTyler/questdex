@@ -40,8 +40,26 @@
 /* Item */
 .Item {
   display: flex;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
   background-color: moccasin;
   width: 70%;
   margin: 0 auto;
   margin-top: 1em;
+  padding: 2em;
+}
+
+.Item section {
+  margin: auto;
+}
+
+.Item section h2 {
+  font-size: 2rem;
+}
+
+.Item button {
+  display: flex;
+  background-color: brown;
+  height: 2em;
+  width: 2em;
 }
