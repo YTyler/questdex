@@ -9,7 +9,6 @@
 .App {
   text-align: center;
   height: 100vh;
-  background-image: url("./assets/yellow_wood_oak.jpg");
 }
 
 /* Navbar */
@@ -34,6 +33,8 @@
 /* Item Page */
 .ItemPage {
   background-image: url("./assets/yellow_wood_oak.jpg");
+  background-position: fixed;
+  padding-bottom: 2em;
 }
 
 /* Item */
@@ -48,9 +49,14 @@
   border-radius: 20px;
   padding: 2em;
   box-shadow: 8px 9px 6px -5px rgb(27, 27, 27);
+  transition: 0.5s;
 }
 
 .Item:hover {
+  width: 80%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding: 2.5em;
 }
 
 .Item section {

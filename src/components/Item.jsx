@@ -7,9 +7,8 @@ export default function Item(props) {
   const openItem = () => {
     setOpen((prevState) => !prevState);
   };
-
   return (
-    <div className="Item" onClick={openItem}>
+    <div className="Item" id={"item" + item.id} onClick={openItem}>
       <section>
         {open && item.imageUrl && (
           <img className="itemImage" src={item.imageUrl} alt={item.altText} />
