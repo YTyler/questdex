@@ -10,7 +10,6 @@
   text-align: center;
   height: 100vh;
   background-image: url("./assets/yellow_wood_oak.jpg");
-  background-repeat: repeat-y;
 }
 
 /* Navbar */
@@ -34,6 +33,7 @@
 }
 /* Item Page */
 .ItemPage {
+  background-image: url("./assets/yellow_wood_oak.jpg");
 }
 
 /* Item */
@@ -61,4 +61,9 @@
   background-color: brown;
   height: 2em;
   width: 2em;
+}
+
+.Item img {
+  height: 200px;
+  width: 200px;
 }

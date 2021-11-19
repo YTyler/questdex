@@ -12,7 +12,7 @@ export default function Item(props) {
     <div className="Item">
       <section>
         {open && item.imageUrl && (
-          <img src={item.imageUrl} alt={item.altText} />
+          <img className="itemImage" src={item.imageUrl} alt={item.altText} />
         )}
         <h2>{item.itemName}</h2>
         {open && <h3>{item.gameTitle}</h3>}
