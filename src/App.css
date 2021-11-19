@@ -10,8 +10,7 @@
   text-align: center;
   height: 100vh;
   background-image: url("./assets/yellow_wood_oak.jpg");
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
+  background-repeat: repeat-y;
 }
 
 /* Navbar */

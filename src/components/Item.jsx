@@ -4,15 +4,15 @@ export default function Item(props) {
   const item = props.item;
   const [open, setOpen] = useState(false);
 
-const openItem = () => {
-    setOpen((prevState)=> !prevState);
-  }
+  const openItem = () => {
+    setOpen((prevState) => !prevState);
+  };
 
   return (
     <div className="Item">
       <section>
-        {item.imageURL && open && (
-          <img src={item.imageURL} alt={item.altText} />
+        {open && item.imageUrl && (
+          <img src={item.imageUrl} alt={item.altText} />
         )}
         <h2>{item.itemName}</h2>
         {open && <h3>{item.gameTitle}</h3>}
@@ -22,7 +22,7 @@ const openItem = () => {
         {open && <h3>Related Quests:</h3>}
         {open && <h3>Notes</h3>}
       </section>
-      <button onClick={openItem} ></button>
+      <button onClick={openItem}></button>
     </div>
   );
 }
