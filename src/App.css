@@ -3,33 +3,48 @@
   font-size: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 .App {
-  text-align: center;
   height: 100vh;
 }
 
 /* Navbar */
-.Navbar {
+.Header {
   display: flex;
-  font-size: 5rem;
+  flex-direction: column;
+  font-size: 6rem;
   color: rgb(221, 198, 89);
-  text-align: start;
+  text-align: left;
   background-image: linear-gradient(
-    0deg,
-    rgb(136, 0, 21) 80%,
-    rgb(161, 61, 76) 90%,
-    rgb(170, 96, 107)
+    170deg,
+    rgb(136, 0, 21) 25%,
+    rgb(184, 96, 109)
   );
   background-color: rgb(136, 0, 21);
   border-bottom: 2px solid black;
   border-radius: 0 0 15% 15%;
-  padding-left: 1em;
-  padding-top: 0.35em;
-  height: 2em;
+  padding: 0.1em 0.5em 0.35em;
 }
+
+.Header h1 {
+  text-shadow: 3px 2px black;
+}
+
+.LoginNav {
+  font-size: 1.2rem;
+  width: fit-content;
+  position: relative;
+  left: 25rem;
+  text-shadow: 1.5px 1px black;
+}
+
+.LoginNav:hover {
+  cursor: pointer;
+  color: rgb(251, 231, 130);
+  text-decoration: underline;
+}
+
 /* Item Page */
 .ItemPage {
   background-image: url("./assets/yellow_wood_oak.jpg");
@@ -41,6 +56,7 @@
 .Item {
   display: flex;
   font-size: 1.5rem;
+  text-align: center;
   background-color: moccasin;
   width: 70%;
   margin: 0 auto;
