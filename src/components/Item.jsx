@@ -9,7 +9,7 @@ export default function Item(props) {
   };
 
   return (
-    <div className="Item">
+    <div className="Item" onClick={openItem}>
       <section>
         {open && item.imageUrl && (
           <img className="itemImage" src={item.imageUrl} alt={item.altText} />
@@ -22,7 +22,6 @@ export default function Item(props) {
         {open && <h3>Related Quests:</h3>}
         {open && <h3>Notes</h3>}
       </section>
-      <button onClick={openItem}></button>
     </div>
   );
 }
