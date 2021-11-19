@@ -31,17 +31,24 @@ const server = setupServer(
     }),
 );
 
-const handleApiCall = (method, endpoint, statusCode, json) => {
+const handleApiCall = (method, endpoint = '*', jsonResponse = {}, statusCode = '200') => {
     server.use( 
         rest[method](endpoint, (req, res, ctx) => res(
             ctx.status(statusCode), 
-            ctx.json(json),
+            ctx.json(jsonResponse),
         )
     ));
 };
+
+const handleRequest = {
+    get: (endpoint, jsonResponse, statusCode) => handleApiCall('get', endpoint, jsonResponse, statusCode),
+    post: (endpoint, jsonResponse, statusCode) => handleApiCall('post', endpoint, jsonResponse, statusCode),
+    put: (endpoint, jsonResponse, statusCode) => handleApiCall('put', endpoint, jsonResponse, statusCode),
+    delete: (endpoint, jsonResponse, statusCode) => handleApiCall('delete', endpoint, jsonResponse, statusCode),
+}
 
 beforeAll(() => server.listen());
 afterAll(() => server.close());
 afterEach(() => server.resetHandlers());
 
-export { server, rest, handleApiCall };
+export { server, rest, handleApiCall, handleRequest };
