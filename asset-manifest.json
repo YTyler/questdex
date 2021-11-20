@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/questdex/static/css/main.2e71203f.chunk.css",
+    "main.js": "/questdex/static/js/main.7c58e3bc.chunk.js",
+    "main.js.map": "/questdex/static/js/main.7c58e3bc.chunk.js.map",
+    "runtime-main.js": "/questdex/static/js/runtime-main.1648bd60.js",
+    "runtime-main.js.map": "/questdex/static/js/runtime-main.1648bd60.js.map",
+    "static/js/2.71e1f756.chunk.js": "/questdex/static/js/2.71e1f756.chunk.js",
+    "static/js/2.71e1f756.chunk.js.map": "/questdex/static/js/2.71e1f756.chunk.js.map",
+    "static/js/3.6151a1e7.chunk.js": "/questdex/static/js/3.6151a1e7.chunk.js",
+    "static/js/3.6151a1e7.chunk.js.map": "/questdex/static/js/3.6151a1e7.chunk.js.map",
+    "index.html": "/questdex/index.html",
+    "static/css/main.2e71203f.chunk.css.map": "/questdex/static/css/main.2e71203f.chunk.css.map",
+    "static/js/2.71e1f756.chunk.js.LICENSE.txt": "/questdex/static/js/2.71e1f756.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/questdex/static/media/yellow_wood_oak.5be6f83e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1648bd60.js",
+    "static/js/2.71e1f756.chunk.js",
+    "static/css/main.2e71203f.chunk.css",
+    "static/js/main.7c58e3bc.chunk.js"
+  ]
+}
