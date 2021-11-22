@@ -47,7 +47,6 @@ a:hover {
 }
 
 .LoginNav:hover {
-  cursor: pointer;
   color: rgb(251, 231, 130);
   text-decoration: underline;
 }
@@ -75,9 +74,9 @@ a:hover {
 
 /* Item Page */
 .ItemPage {
-  background-image: url("./assets/yellow_wood_oak.jpg");
-  background-position: fixed;
-  padding-bottom: 2em;
+  /* background-image: url("./assets/yellow_wood_oak.jpg"); */
+  /* background-position: fixed; */
+  padding-bottom: 5em;
 }
 
 /* Item */
