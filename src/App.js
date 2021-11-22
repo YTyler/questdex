@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/questdex">
+          <Route path="/questdex" >
             <Route index element={<HomePage/>}/>
             <Route path="items" element={<ItemPage/>}/>
             <Route path="quests" element={<QuestPage/>}/>

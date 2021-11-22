@@ -6,17 +6,19 @@ export default function Navbar() {
   return (
     <div className="Navbar">
       <div className="LeftNav">
-        <h1>QuestDex</h1>
+        <Link to="/questdex">
+          <h1>QuestDex</h1>
+        </Link>
         <Link to="/login">
           <h3 className="LoginNav">Login/Register</h3>
         </Link>
       </div>
       <nav className="RightNav">
-        <Link to="quests" className="NavButton">
+        <Link to="/questdex/quests" className="NavButton">
           <GiSwordSpade />
           <h3>Quests</h3>
         </Link>
-        <Link to="items" className="NavButton">
+        <Link to="/questdex/items" className="NavButton">
           <GiSwapBag />
           <h3>Items</h3>
         </Link>
