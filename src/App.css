@@ -3,6 +3,7 @@
   font-size: 100%;
   margin: 0;
   padding: 0;
+  caret-color: transparent;
 }
 
 body {
@@ -114,6 +115,47 @@ a:hover {
 }
 
 .Item img {
+  height: 200px;
+  width: 200px;
+}
+
+/* Questpage */
+
+/* Quest */
+.Quest {
+  display: flex;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: moccasin;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 1em;
+  border-radius: 20px;
+  padding: 2em;
+  box-shadow: 8px 9px 5px -4px rgb(27, 27, 27),
+    -8px 9px 5px -4px rgb(27, 27, 27);
+  transition: 0.375s;
+}
+
+.Quest:hover {
+  cursor: pointer;
+  width: 80%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  padding: 2.5em;
+  box-shadow: 12px 20px 15px -4px rgb(8, 8, 8),
+    -12px 20px 15px -4px rgb(8, 8, 8);
+}
+
+.Quest section {
+  margin: auto;
+}
+
+.Quest section h2 {
+  font-size: 2rem;
+}
+
+.Quest img {
   height: 200px;
   width: 200px;
 }
