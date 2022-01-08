@@ -11,7 +11,7 @@ export default function Login() {
     }
 
     return (
-        <div>
+        <div className = "Login">
             <form onSubmit = {login}>
                 <label htmlFor = "username">Username</label>
                 <input type = "text" id = "username" value = {username} onChange = {(element) => setUsername(element.target.value)} placeholder = "Username..."/>
