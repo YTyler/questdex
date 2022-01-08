@@ -9,7 +9,7 @@ export default function Navbar() {
         <Link to="/questdex">
           <h1>QuestDex</h1>
         </Link>
-        <Link to="/login">
+        <Link to="/questdex/login">
           <h3 className="LoginNav">Login/Register</h3>
         </Link>
       </div>
