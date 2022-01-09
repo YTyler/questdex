@@ -163,10 +163,11 @@ a:hover {
 /* Login Component */
 .Login {
   display: flex;
-  font-size: 1.5rem;
+  flex-direction: column;
+  font-size: 2.0rem;
   text-align: center;
   background-color: moccasin;
-  width: 70%;
+  width: 40%;
   margin: 0 auto;
   margin-top: 1em;
   border-radius: 20px;
@@ -174,4 +175,15 @@ a:hover {
   box-shadow: 8px 9px 5px -4px rgb(27, 27, 27),
     -8px 9px 5px -4px rgb(27, 27, 27);
   transition: 0.375s;
+}
+
+.Login input {
+  padding: 0.2em;
+  margin: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.LoginButton {
+  cursor: pointer;
 }

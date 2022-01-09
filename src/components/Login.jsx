@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
 
@@ -7,20 +8,19 @@ export default function Login() {
 
     const login = (event) => {
         event.preventDefault();
+        // Call Login Function
         console.log("Login");
     }
 
     return (
-        <div className = "Login">
-            <form onSubmit = {login}>
-                <label htmlFor = "username">Username</label>
-                <input type = "text" id = "username" value = {username} onChange = {(element) => setUsername(element.target.value)} placeholder = "Username..."/>
+        <form onSubmit = {login} className = "Login">
+            <input type = "text" value = {username} onChange = {(element) => setUsername(element.target.value)} placeholder = "Username" autoFocus/>
+            <input type = "password" value = {password} onChange = {(element) => setPassword(element.target.value)} placeholder = "Password" autoFocus/>
 
-                <label htmlFor = "password">Password</label>
-                <input type = "password" id = "password" value = {password} onChange = {(element) => setPassword(element.target.value)} placeholder = "Password..."/>
-
-                <input type = "submit" value = "Submit"/>
-            </form>
-        </div>
+            <input className="LoginButton" type = "submit" value = "Login"/>
+            <Link to = "/questdex">
+                <input className="LoginButton" type = "button" value = "Register"/>
+            </Link>
+        </form>
     );
 }
