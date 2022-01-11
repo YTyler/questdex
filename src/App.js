@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./screens/HomePage";
 import ItemPage from "./screens/ItemPage";
 import QuestPage from "./screens/QuestPage";
+import LoginPage from "./screens/LoginPage";
 import NoMatch from "./screens/NoMatch";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route index element={<HomePage/>}/>
             <Route path="items" element={<ItemPage/>}/>
             <Route path="quests" element={<QuestPage/>}/>
+            <Route path="login" element={<LoginPage/>}/> 
           </Route>
           <Route path="*" element={<NoMatch/>}/>
         </Routes>
