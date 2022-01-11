@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-export default function Login() {
-    let navigate = useNavigate();
+export default function Login(props) {
+    // let navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -34,7 +34,8 @@ export default function Login() {
                 className="LoginButton"
                 type="button"
                 value="Register"
-                onClick={() => navigate("/questdex")}
+                // onClick={() => navigate("/questdex")}
+                onClick={() => props.registerHandler(false)}
             />
         </form>
     );
