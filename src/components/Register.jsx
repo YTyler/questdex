@@ -2,6 +2,11 @@ import React, {useState} from "react";
 
 export default function Register() {
 
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
     const checkRegistration = () => {
         console.log("Register Attempt")
         register();
@@ -13,10 +18,10 @@ export default function Register() {
 
     return (
         <form onSubmit={checkRegistration}>
-            <input type = "text" placeholder="Username"/>
-            <input type = "email" placeholder="Email"/>
-            <input type = "password" placeholder="Password"/>
-            <input type = "password" placeholder="Confirm Password"/>
+            <input type = "text" value = {username} onChange={(elem) => setUsername(elem.target.value)} placeholder="Username"/>
+            <input type = "email" value = {email} onChange={(elem) => setEmail(elem.target.value)} placeholder="Email"/>
+            <input type = "password" value = {password} onChange={(elem) => setPassword(elem.target.value)} placeholder="Password"/>
+            <input type = "password" value={confirmPassword} onChange={(elem) => setConfirmPassword(elem.target.value)} placeholder="Confirm Password"/>
             <input type = "submit" value="Register" />
         </form>
     );
