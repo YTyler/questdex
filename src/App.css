@@ -186,3 +186,18 @@ a:hover {
 .LoginRegisterButton {
     cursor: pointer;
 }
+
+.LoginRegister p {
+    /* color: gray; */
+    font-size: 1.2rem;
+    text-align: left;
+    margin-left: 0.9em;
+}
+
+.Valid {
+    color: green;
+}
+
+.Invalid {
+    color: red;
+}
