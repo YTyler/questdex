@@ -7,7 +7,8 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    const checkRegistration = () => {
+    const checkRegistration = (event) => {
+        event.preventDefault();
         console.log("Register Attempt")
         register();
     }
