@@ -13,7 +13,7 @@ export default function Login(props) {
     };
 
     return (
-        <form onSubmit={login} className="Login">
+        <form onSubmit={login} className="LoginRegister">
             <input
                 type="text"
                 value={username}
@@ -29,9 +29,9 @@ export default function Login(props) {
                 autoFocus
             />
 
-            <input className="LoginButton" type="submit" value="Login" />
+            <input className="LoginRegisterButton" type="submit" value="Login" />
             <input
-                className="LoginButton"
+                className="LoginRegisterButton"
                 type="button"
                 value="Register"
                 // onClick={() => navigate("/questdex")}
