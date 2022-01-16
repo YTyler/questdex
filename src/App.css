@@ -69,8 +69,13 @@ a:hover {
     /* TODO add hover animation */
 }
 
+.NavButton {
+    cursor: pointer;
+}
+
 .NavButton + .NavButton {
     margin-left: 0.5em;
+    cursor: pointer;
 }
 
 /* Item Page */
@@ -120,6 +125,11 @@ a:hover {
 }
 
 /* Questpage */
+.QuestPage {
+    /* background-image: url("./assets/yellow_wood_oak.jpg"); */
+    /* background-position: fixed; */
+    padding-bottom: 5em;
+}
 
 /* Quest */
 .Quest {
