@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(props) {
-    // let navigate = useNavigate();
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -10,6 +10,8 @@ export default function Login(props) {
         event.preventDefault();
         // Call Login Function
         console.log("Login");
+        props.log(true);
+        navigate("/questdex");
     };
 
     return (

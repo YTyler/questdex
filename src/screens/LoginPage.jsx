@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Login from "../components/Login";
 import Register from "../components/Register";
 
-export default function LoginPage() {
+export default function LoginPage(props) {
 
     const [isLoggingIn, setIsLoggingIn] = useState(true);
 
@@ -15,7 +15,7 @@ export default function LoginPage() {
             <div className = "Navbar">
                 <h1>{isLoggingIn ? "Login" : "Register"}</h1>
             </div>
-            {isLoggingIn ? <Login registerHandler = {registerHandler} /> : <Register />}
+            {isLoggingIn ? <Login log = {props.logging} registerHandler = {registerHandler} /> : <Register log = {props.logging}/>}
         </>
     );
 }

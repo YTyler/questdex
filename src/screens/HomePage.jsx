@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 
-export default function HomePage() {
+export default function HomePage(props) {
   return (
     <>
-      <Navbar />
+      <Navbar status = {props.logging} />
     </>
   );
 }
