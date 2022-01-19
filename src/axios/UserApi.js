@@ -36,3 +36,13 @@ export async function register(username, password, email) {
         return err;
     }
 }
+
+export async function deleteUser(username) {
+    try {
+        await axios.delete(`/user/${username}`);
+        return true;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+}
