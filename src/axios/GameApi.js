@@ -19,10 +19,9 @@ export async function getGameById(game_id) {
 }
 
 export async function postGame(gameName) {
-    const game = {game_name: gameName};
     try {
         await axios.post('/game', {
-            game
+            game_name: gameName
         });
         return true;
     } catch (err) {
@@ -32,10 +31,10 @@ export async function postGame(gameName) {
 }
 
 export async function updateGame(game_id, gameName) {
-    const game = {game_id: game_id, game_name: gameName};
     try {
         await axios.put(`/game/${game_id}`, {
-            game
+            game_id: game_id, 
+            game_name: gameName
         });
         return true;
     } catch (err) {
