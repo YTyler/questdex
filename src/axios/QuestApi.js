@@ -10,10 +10,11 @@ export async function getAllQuests() {
 }
 
 export async function postQuest(gameId, userId, questName) {
-    const quest = {game_id: gameId, user_id: userId, quest_name: questName};
     try {
         await axios.post('/quests', {
-            quest
+            game_id: gameId, 
+            user_id: userId, 
+            quest_name: questName
         });
         return true;
     } catch (err) {
@@ -23,10 +24,12 @@ export async function postQuest(gameId, userId, questName) {
 }
 
 export async function updateQuest(questId, gameId, userId, questName) {
-    const quest = {quest_id: questId, game_id: gameId, user_id: userId, quest_name: questName};
     try {
         await axios.put(`/quests/${questId}`, {
-            quest
+            quest_id: questId, 
+            game_id: gameId, 
+            user_id: userId, 
+            quest_name: questName
         });
         return true;
     } catch (err) {

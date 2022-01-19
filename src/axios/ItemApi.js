@@ -9,11 +9,14 @@ export async function getAllItems() {
     }
 }
 
-export async function postItem(gameId, itemName, quantity, notes, img) {
-    const item = {game_id: gameId, item_name: itemName, quantity_needed: quantity, item_notes: notes, item_img: img};
+export async function postItem(gameId, itemName, quantity, notes, img) {  
     try {
         await axios.post('/items', {
-            item
+            game_id: gameId, 
+            item_name: itemName, 
+            quantity_needed: quantity, 
+            item_notes: notes, 
+            item_img: img
         });
         return true;
     } catch (err) {
@@ -23,10 +26,14 @@ export async function postItem(gameId, itemName, quantity, notes, img) {
 }
 
 export async function updateItem(itemId, gameId, itemName, quantity, notes, img) {
-    const item = {item_id: itemId, game_id: gameId, item_name: itemName, quantity_needed: quantity, item_notes: notes, item_img: img};
     try {
         await axios.put(`/items/${itemId}`, {
-            item
+            item_id: itemId, 
+            game_id: gameId, 
+            item_name: itemName, 
+            quantity_needed: quantity, 
+            item_notes: notes, 
+            item_img: img
         });
         return true;
     } catch (err) {
