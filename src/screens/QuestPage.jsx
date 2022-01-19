@@ -1,6 +1,5 @@
 import React from "react";
 import Quest from "../components/Quest";
-import Navbar from "../components/Navbar";
 
 export default function QuestPage() {
   const testQuests = [
@@ -52,9 +51,9 @@ export default function QuestPage() {
       total: 60,
     },
   ];
+  
   return (
     <div className="QuestPage">
-      <Navbar />
       {testQuests.map((quest) => (
         <Quest quest={quest} key={quest.id} />
       ))}

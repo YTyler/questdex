@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Login from "../components/Login";
+import Register from "../components/Register";
 
-export default function LoginPage() {
+export default function LoginPage(props) {
+
+    const [isLoggingIn, setIsLoggingIn] = useState(true);
+
+    const registerHandler = (element) => {
+        setIsLoggingIn(element);
+    }
+
     return (
         <>
             <div className = "Navbar">
-                <h1>Login</h1>
+                <h1>{isLoggingIn ? "Login" : "Register"}</h1>
             </div>
-
-            <Login/>
+            {isLoggingIn ? <Login log = {props.logging} registerHandler = {registerHandler} /> : <Register log = {props.logging}/>}
         </>
     );
 }
