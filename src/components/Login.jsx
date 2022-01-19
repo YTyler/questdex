@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
-    let navigate = useNavigate();
+export default function Login(props) {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -10,10 +10,12 @@ export default function Login() {
         event.preventDefault();
         // Call Login Function
         console.log("Login");
+        props.log(true);
+        navigate("/questdex");
     };
 
     return (
-        <form onSubmit={login} className="Login">
+        <form onSubmit={login} className="LoginRegister">
             <input
                 type="text"
                 value={username}
@@ -29,12 +31,13 @@ export default function Login() {
                 autoFocus
             />
 
-            <input className="LoginButton" type="submit" value="Login" />
+            <input className="LoginRegisterButton" type="submit" value="Login" />
             <input
-                className="LoginButton"
+                className="LoginRegisterButton"
                 type="button"
                 value="Register"
-                onClick={() => navigate("/questdex")}
+                // onClick={() => navigate("/questdex")}
+                onClick={() => props.registerHandler(false)}
             />
         </form>
     );

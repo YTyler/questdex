@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "../components/Item";
-import Navbar from "../components/Navbar";
+
 export default function ItemPage() {
   const testItems = [
     {
@@ -52,9 +52,9 @@ export default function ItemPage() {
       total: 60,
     },
   ];
+  
   return (
     <div className="ItemPage">
-      <Navbar />
       {testItems.map((testItem) => (
         <Item item={testItem} key={testItem.id} />
       ))}
