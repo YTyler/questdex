@@ -1,4 +1,4 @@
-import axios from "../../axiosConfig";
+import axios from "./axiosConfig";
 
 // Backend Takes Request Params
 export async function login(username, password) {

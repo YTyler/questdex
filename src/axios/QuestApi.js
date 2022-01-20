@@ -1,4 +1,4 @@
-import axios from "../../axiosConfig";
+import axios from "./axiosConfig";
 
 export async function getAllQuests() {
     try {
