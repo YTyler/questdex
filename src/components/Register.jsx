@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { register } from "../axios/UserApi";
 
 export default function Register(props) {
     // Navigate back to home page
@@ -60,8 +61,15 @@ export default function Register(props) {
         event.preventDefault();
         console.log("Register Attempt");
         if(validUsername && validEmail && validPassword && passwordsMatch) {
-            props.log(true);
-            navigate("/questdex");
+            // Axios request for registering a user
+            const user = register(username, email, password);
+            
+            if(user) {
+                console.log("Naa bruh this already taken, gtfo and try again beech");
+            } else {
+                props.log(true);
+                navigate("/questdex");
+            }
         }
     };
 

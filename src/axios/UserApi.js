@@ -31,7 +31,8 @@ export async function register(username, password, email) {
             password: password,
             email: email
         });
-        return response.data;
+        console.log(response);
+        return Promise.resolve(response.data);
     } catch (err) {
         return err;
     }
