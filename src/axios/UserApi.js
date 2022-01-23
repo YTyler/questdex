@@ -3,11 +3,18 @@ import axios from "./axiosConfig";
 // Backend Takes Request Params
 export async function login(username, password) {
     try {
-        const response = await axios.post('/user', {}, { params: {
+        const response = await axios.post('/user/login', {}, { params: {
             username,
             password
         }});
-        return response.data;
+        // console.log(response);
+        // console.log(response.headers);        
+        const condition = Object.keys(response.data).length === 0;
+        console.log(condition)
+        if(condition) {return Promise.resolve(null) }
+        else {
+            return Promise.resolve(response.data);
+        }
     } catch (err) {
         return err;
     }

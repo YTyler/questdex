@@ -62,13 +62,13 @@ export default function Register(props) {
         console.log("Register Attempt");
         if(validUsername && validEmail && validPassword && passwordsMatch) {
             // Axios request for registering a user
-            const user = register(username, email, password);
+            const user = register(username, password, email);
             
             if(user) {
-                console.log("Naa bruh this already taken, gtfo and try again beech");
-            } else {
                 props.log(true);
                 navigate("/questdex");
+            } else {
+                console.log("Naa bruh this already taken, gtfo and try again beech");
             }
         }
     };
