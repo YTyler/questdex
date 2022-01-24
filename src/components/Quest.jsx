@@ -9,8 +9,9 @@ export default function Quest(props) {
   };
 
   const deleteQuest = () => {
-    // Delete Quest from database and get it again?
+    // Delete Quest from database
     console.log("Delete Quest");
+    props.delete(quest);
   };
 
   const editQuest = () => {
