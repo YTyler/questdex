@@ -3,7 +3,8 @@ import axios from "./axiosConfig";
 export async function getAllQuests() {
     try {
         const response = await axios.get('/quests');
-        return response.data;
+        console.log(response.data);
+        return Promise.resolve(response.data);
     } catch (err) {
         console.log(err);
     }

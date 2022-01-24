@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Quest from "../components/Quest";
+import axios from "../axios/axiosConfig";
 
 export default function QuestPage() {
+
+  const [quests, setQuests] = useState([]);
+
   const testQuests = [
     {
       id: 1,
@@ -51,11 +55,19 @@ export default function QuestPage() {
       total: 60,
     },
   ];
+
+  useEffect(() => {
+    try {
+      axios.get('/quests').then(res => setQuests(res.data));
+    } catch (err) {
+        console.log(err);
+    }
+  }, [])
   
   return (
     <div className="QuestPage">
-      {testQuests.map((quest) => (
-        <Quest quest={quest} key={quest.id} />
+      {quests.map((quest) => (
+        <Quest quest={quest} key={quest.quest_id} />
       ))}
     </div>
   );
