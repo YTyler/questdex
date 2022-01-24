@@ -67,6 +67,7 @@ a:hover {
 
 .NavButton:hover {
     /* TODO add hover animation */
+    color: rgb(251, 231, 130);
 }
 
 .NavButton {
@@ -163,6 +164,19 @@ a:hover {
 
 .Quest section h2 {
     font-size: 2rem;
+}
+
+.Quest h3 {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.QuestEdit:hover {
+    color: blue;
+}
+
+.QuestDelete:hover {
+    color: red;
 }
 
 .Quest img {
