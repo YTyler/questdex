@@ -169,6 +169,8 @@ a:hover {
 .Quest h3 {
     margin-left: 1em;
     margin-right: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .QuestEdit:hover {
