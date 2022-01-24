@@ -35,6 +35,9 @@ export default function QuestPage() {
   
   return (
     <div className="QuestPage">
+      <div className="AddQuest">
+        <button>Add Quest</button>
+      </div>
       {quests.map((quest) => (
         <Quest quest={quest} key={quest.quest_id} delete = {deleteHandler} edit = {editHandler} />
       ))}
