@@ -10,14 +10,10 @@ export default function Login(props) {
     const loginHandler = (event) => {
         event.preventDefault();
         // Call Login Function
-        // console.log("Login");
         const user = login(username, password);
-        console.log(user);
-        if(user !== null) {
+        if(user) {
             props.log(true);
             navigate("/questdex");
-        } else {
-            console.log("naa bruh, incorrect beeeeesh");
         }
     };
 

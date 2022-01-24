@@ -28,7 +28,6 @@ export default function QuestPage() {
             user_id: 1, 
             quest_name: questName
         });
-        console.log("Add Quest")
         setQuestName("");
       } catch (err) {
           console.log(err);

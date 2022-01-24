@@ -59,7 +59,6 @@ export default function Register(props) {
     // Checks if all input fields are valid and then routes to home page
     const checkRegistration = (event) => {
         event.preventDefault();
-        console.log("Register Attempt");
         if(validUsername && validEmail && validPassword && passwordsMatch) {
             // Axios request for registering a user
             const user = register(username, password, email);
@@ -67,8 +66,6 @@ export default function Register(props) {
             if(user) {
                 props.log(true);
                 navigate("/questdex");
-            } else {
-                console.log("Naa bruh this already taken, gtfo and try again beech");
             }
         }
     };

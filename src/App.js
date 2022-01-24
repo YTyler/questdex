@@ -11,7 +11,6 @@ function App() {
 
   const login = (element) => {
     setLog(element);
-    console.log(element);
   }
 
   return (
