@@ -23,9 +23,14 @@ export default function HomePage(props) {
     }
   }
 
+  const closeAll = () => {
+    setQuestsOpen(false);
+    setItemsOpen(false);
+  }
+
   return (
     <>
-      <Navbar status = {props.logging} item = {openItem} quest = {openQuest} user = {props.userObject}/>
+      <Navbar status = {props.logging} item = {openItem} quest = {openQuest} user = {props.userObject} logout = {closeAll}/>
       {questsOpen && <QuestPage userId = {props.userObject.user_id} />}
       {itemsOpen && <ItemPage />}
     </>
