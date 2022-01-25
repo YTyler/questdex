@@ -67,6 +67,7 @@ a:hover {
 
 .NavButton:hover {
     /* TODO add hover animation */
+    color: rgb(251, 231, 130);
 }
 
 .NavButton {
@@ -165,9 +166,47 @@ a:hover {
     font-size: 2rem;
 }
 
+.Quest h3 {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.QuestEdit:hover {
+    color: blue;
+}
+
+.QuestDelete:hover {
+    color: red;
+}
+
 .Quest img {
     height: 200px;
     width: 200px;
+}
+
+/* Div that holds the button */
+.AddQuest {
+    text-align: right;
+}
+
+.AddQuest button {
+    font-size: 2rem;
+    padding: 0.6em;
+    border-radius: 0.5rem;
+    border: none;    
+    margin: 0 3em;
+    background-color: moccasin;
+    cursor: pointer;
+    box-shadow: 8px 9px 5px -4px rgb(27, 27, 27),
+        -8px 9px 5px -4px rgb(27, 27, 27);
+    transition: 0.375s;
+}
+
+.AddQuest button:hover {
+    box-shadow: 12px 20px 15px -4px rgb(8, 8, 8),
+    -12px 20px 15px -4px rgb(8, 8, 8);
 }
 
 /* Login Component */

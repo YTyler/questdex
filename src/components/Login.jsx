@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login } from "../axios/UserApi";
 
 export default function Login(props) {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const login = (event) => {
+    const loginHandler = (event) => {
         event.preventDefault();
         // Call Login Function
-        console.log("Login");
-        props.log(true);
-        navigate("/questdex");
+        const user = login(username, password);
+        if(user) {
+            props.log(true);
+            navigate("/questdex");
+        }
     };
 
     return (
-        <form onSubmit={login} className="LoginRegister">
+        <form onSubmit={loginHandler} className="LoginRegister">
             <input
                 type="text"
                 value={username}
@@ -36,7 +39,6 @@ export default function Login(props) {
                 className="LoginRegisterButton"
                 type="button"
                 value="Register"
-                // onClick={() => navigate("/questdex")}
                 onClick={() => props.registerHandler(false)}
             />
         </form>
