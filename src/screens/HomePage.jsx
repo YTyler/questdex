@@ -8,16 +8,17 @@ export default function HomePage(props) {
 
   const [itemsOpen, setItemsOpen] = useState(false);
   const [questsOpen, setQuestsOpen] = useState(false);
+  const [user, setUser] = useState(props.userObject);
 
   const openQuest = () => {
-    if(props.userObject) {
+    if(user) {
       setItemsOpen(false);
       setQuestsOpen(true);
     }
   }
 
   const openItem = () => {
-    if(props.userObject) {
+    if(user) {
       setQuestsOpen(false);
       setItemsOpen(true);
     }
@@ -26,6 +27,7 @@ export default function HomePage(props) {
   const closeAll = () => {
     setQuestsOpen(false);
     setItemsOpen(false);
+    setUser("");
   }
 
   return (
