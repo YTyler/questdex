@@ -9,8 +9,6 @@ export default function Navbar(props) {
   // Close Items and open Quests
   const openQuests = () => {
     props.quest();
-    console.log(props.user);
-    console.log(props.user.username);
   }
 
   // Close Quests and Open Items

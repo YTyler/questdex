@@ -10,13 +10,17 @@ export default function HomePage(props) {
   const [questsOpen, setQuestsOpen] = useState(false);
 
   const openQuest = () => {
-    setItemsOpen(false);
-    setQuestsOpen(true);
+    if(props.userObject) {
+      setItemsOpen(false);
+      setQuestsOpen(true);
+    }
   }
 
   const openItem = () => {
-    setQuestsOpen(false);
-    setItemsOpen(true);
+    if(props.userObject) {
+      setQuestsOpen(false);
+      setItemsOpen(true);
+    }
   }
 
   return (
