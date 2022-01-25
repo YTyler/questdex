@@ -8,6 +8,7 @@ export default function QuestPage() {
   const [addQuest, setAddQuest] = useState(false);
   const [questName, setQuestName] = useState("");
   const [validQuestName, setValidQuestName] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // Setting quest name when adding a quest
   const questNameHandler = (input) => {
@@ -18,17 +19,18 @@ export default function QuestPage() {
   }
 
   // Axios function for adding a quest and resets the input field to an empty string
-  const addQuestHandler = () => {
+  const addQuestHandler = async () => {
     if(validQuestName) {
       try {
         //! User Id needs to be taken from a logged in user
         //! Will need to be updated
-        axios.post('/quests', {
+        await axios.post('/quests', {
             game_id: 1, 
             user_id: 1, 
             quest_name: questName
         });
         setQuestName("");
+        setIsLoading(prev => !prev);
       } catch (err) {
           console.log(err);
       }
@@ -36,19 +38,21 @@ export default function QuestPage() {
   }
 
   // Axios function for deleting a quest
-  const deleteHandler = (quest) => {
-    axios.delete(`/quests/${quest.quest_id}`);
+  const deleteHandler = async (quest) => {
+    await axios.delete(`/quests/${quest.quest_id}`);
+    setIsLoading(prev => !prev);
   }
 
   // Axios function for editing a quest
-  const editHandler = (quest) => {
+  const editHandler = async (quest) => {
     try {
-      axios.put(`/quests/${quest.quest_id}`, {
+      await axios.put(`/quests/${quest.quest_id}`, {
         quest_id: quest.quest_id, 
         game_id: quest.game_id, 
         user_id: quest.user_id, 
         quest_name: quest.quest_name
       });
+      setIsLoading(prev => !prev);
     } catch (err) {
       console.log(err);
     }
@@ -61,7 +65,7 @@ export default function QuestPage() {
     } catch (err) {
         console.log(err);
     }  
-  }, [quests])
+  }, [isLoading])
   
   return (
     <div className="QuestPage">
