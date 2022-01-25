@@ -35,37 +35,43 @@ export default function Register(props) {
     // Sets state of email and checks if email is sufficient
     const emailHandler = (input) => {
         setEmail(input);
-        if((input.includes("@")) && (!input.includes(" ")) && (input.length > 2)) {
+        if (input.includes("@") && !input.includes(" ") && input.length > 2) {
             setValidEmail(true);
-        } else {setValidEmail(false);}
+        } else {
+            setValidEmail(false);
+        }
     };
 
     // Sets state of password and checks if password is sufficient
     const passwordHandler = (input) => {
         setPassword(input);
-        if(input.length >= 8 && !input.includes(" ")) {
+        if (input.length >= 8 && !input.includes(" ")) {
             setValidPassword(true);
-        } else {setValidPassword(false);}
+        } else {
+            setValidPassword(false);
+        }
     };
-    
+
     // Sets state of confirmation password and checks if password and confirm password match
     const confirmPasswordHandler = (input) => {
         setConfirmPassword(input);
-        if(input === password) {
+        if (input === password) {
             setPasswordsMatch(true);
-        } else {setPasswordsMatch(false);}
+        } else {
+            setPasswordsMatch(false);
+        }
     };
 
     // Checks if all input fields are valid and then routes to home page
     const checkRegistration = (event) => {
         event.preventDefault();
-        if(validUsername && validEmail && validPassword && passwordsMatch) {
+        if (validUsername && validEmail && validPassword && passwordsMatch) {
             // Axios request for registering a user
             const user = register(username, password, email);
-            
-            if(user) {
+
+            if (user) {
                 props.log(true);
-                navigate("/questdex");
+                navigate("/");
             }
         }
     };
@@ -102,9 +108,15 @@ export default function Register(props) {
                 Username must be at least 4 characters and less than 15
                 characters long, no spaces
             </p>
-            <p className={validEmail ? "Valid" : "Invalid"}>Email must be valid, no spaces</p>
-            <p className={validPassword ? "Valid" : "Invalid"}>Password must be at least 8 characters long, no spaces</p>
-            <p className={passwordsMatch ? "Valid" : "Invalid"}>Both the Password and the Confirmation Password must match</p>
+            <p className={validEmail ? "Valid" : "Invalid"}>
+                Email must be valid, no spaces
+            </p>
+            <p className={validPassword ? "Valid" : "Invalid"}>
+                Password must be at least 8 characters long, no spaces
+            </p>
+            <p className={passwordsMatch ? "Valid" : "Invalid"}>
+                Both the Password and the Confirmation Password must match
+            </p>
 
             <input
                 type="submit"

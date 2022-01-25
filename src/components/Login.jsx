@@ -11,9 +11,9 @@ export default function Login(props) {
         event.preventDefault();
         // Call Login Function
         const user = login(username, password);
-        if(user) {
+        if (user) {
             props.log(true);
-            navigate("/questdex");
+            navigate("/");
         }
     };
 
@@ -34,7 +34,11 @@ export default function Login(props) {
                 autoFocus
             />
 
-            <input className="LoginRegisterButton" type="submit" value="Login" />
+            <input
+                className="LoginRegisterButton"
+                type="submit"
+                value="Login"
+            />
             <input
                 className="LoginRegisterButton"
                 type="button"
