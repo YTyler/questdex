@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GiSwapBag, GiSwordSpade } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import axios from "../axios/axiosConfig";
 
 export default function Navbar(props) {
 
@@ -16,6 +17,13 @@ export default function Navbar(props) {
     props.item();
   }
 
+  // Axios function for logging out a user
+  const logoutHandler = async () => {
+    await axios.post(`/user/${props.user.username}`, {});
+    setUserStatus(false);
+    props.logout();
+  }
+
   return (
     <div className="Navbar">
       <div className="LeftNav">
@@ -23,8 +31,8 @@ export default function Navbar(props) {
           <h1>QuestDex</h1>
         </Link>
         {userStatus ?
-          <Link to="/questdex" onClick={() => setUserStatus(false)}>
-            <h3 className="LoginNav">Logout</h3>
+          <Link to="/questdex" onClick={logoutHandler}>
+            <h3 className="LoginNav">{props.user.username} Logout</h3>
           </Link> :
           <Link to="/questdex/login">
             <h3 className="LoginNav">Login/Register</h3>
