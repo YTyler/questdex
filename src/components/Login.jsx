@@ -28,14 +28,12 @@ export default function Login(props) {
                 value={username}
                 onChange={(element) => setUsername(element.target.value)}
                 placeholder="Username"
-                autoFocus
             />
             <input
                 type="password"
                 value={password}
                 onChange={(element) => setPassword(element.target.value)}
                 placeholder="Password"
-                autoFocus
             />
 
             <input className="LoginRegisterButton" type="submit" value="Login" />
