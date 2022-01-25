@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../axios/UserApi";
+import axios from "../axios/axiosConfig";
 
 export default function Login(props) {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const loginHandler = (event) => {
+    const loginHandler = async (event) => {
         event.preventDefault();
         // Call Login Function
-        const user = login(username, password);
-        if(user) {
+        const response = await axios.post('/user/login', {}, { params: {
+            username,
+            password
+        }});
+        if(response.data) {
             props.log(true);
             navigate("/questdex");
         }
