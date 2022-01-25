@@ -22,7 +22,7 @@ export default function HomePage(props) {
   return (
     <>
       <Navbar status = {props.logging} item = {openItem} quest = {openQuest} user = {props.userObject}/>
-      {questsOpen && <QuestPage />}
+      {questsOpen && <QuestPage userId = {props.userObject.user_id} />}
       {itemsOpen && <ItemPage />}
     </>
   );

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Quest from "../components/Quest";
 import axios from "../axios/axiosConfig";
 
-export default function QuestPage() {  
+export default function QuestPage(props) {  
 
   const [quests, setQuests] = useState([]);
   const [addQuest, setAddQuest] = useState(false);
@@ -26,9 +26,10 @@ export default function QuestPage() {
         //! Will need to be updated
         await axios.post('/quests', {
             game_id: 1, 
-            user_id: 1, 
+            user_id: props.userId, 
             quest_name: questName
         });
+        console.log(quests);
         setQuestName("");
         setIsLoading(prev => !prev);
       } catch (err) {
@@ -64,7 +65,7 @@ export default function QuestPage() {
       axios.get('/quests').then(res => setQuests(res.data));
     } catch (err) {
         console.log(err);
-    }  
+    }
   }, [isLoading])
   
   return (
