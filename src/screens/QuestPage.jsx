@@ -22,8 +22,6 @@ export default function QuestPage(props) {
   const addQuestHandler = async () => {
     if(validQuestName) {
       try {
-        //! User Id needs to be taken from a logged in user
-        //! Will need to be updated
         await axios.post('/quests', {
             game_id: 1, 
             user_id: props.userId, 
@@ -62,11 +60,11 @@ export default function QuestPage(props) {
   // Axios function for getting all quests
   useEffect(() => {
     try {
-      axios.get('/quests').then(res => setQuests(res.data));
+      axios.get('/quests').then((res) => setQuests(res.data.filter(quest => quest.user_id === props.userId)));
     } catch (err) {
         console.log(err);
     }
-  }, [isLoading])
+  }, [isLoading, props.userId])
   
   return (
     <div className="QuestPage">
