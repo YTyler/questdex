@@ -29,6 +29,7 @@ export default function QuestPage(props) {
         });
         console.log(quests);
         setQuestName("");
+        setValidQuestName(false);
         setIsLoading(prev => !prev);
       } catch (err) {
           console.log(err);
@@ -69,10 +70,12 @@ export default function QuestPage(props) {
   return (
     <div className="QuestPage">
       {addQuest ?
-        <div>
+        <div className = "AddQuestForm">
           <input type = "text" value = {questName} onChange={(elem) => questNameHandler(elem.target.value)} placeholder="Questname..."/>
-          <input type = "submit" onClick={addQuestHandler}/>
-          <input type = "button" value = "Cancel" onClick={() => setAddQuest(false)}/>
+          <div className="AddQuestButtons">  
+            <input className="QuestSubmit" type = "submit" onClick={addQuestHandler}/>
+            <input className="QuestCancel" type = "button" value = "Cancel" onClick={() => setAddQuest(false)}/>
+          </div>
         </div>
           :
         <div className="AddQuest">
