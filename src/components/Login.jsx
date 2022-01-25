@@ -7,15 +7,16 @@ export default function Login(props) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    // Axios function to log in a user
     const loginHandler = async (event) => {
         event.preventDefault();
-        // Call Login Function
         const response = await axios.post('/user/login', {}, { params: {
             username,
             password
         }});
         if(response.data) {
             props.log(true);
+            props.user(response.data);
             navigate("/questdex");
         }
     };

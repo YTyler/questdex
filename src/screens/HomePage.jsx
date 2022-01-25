@@ -21,7 +21,7 @@ export default function HomePage(props) {
 
   return (
     <>
-      <Navbar status = {props.logging} item = {openItem} quest = {openQuest}/>
+      <Navbar status = {props.logging} item = {openItem} quest = {openQuest} user = {props.userObject}/>
       {questsOpen && <QuestPage />}
       {itemsOpen && <ItemPage />}
     </>

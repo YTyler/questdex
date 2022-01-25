@@ -9,6 +9,8 @@ export default function Navbar(props) {
   // Close Items and open Quests
   const openQuests = () => {
     props.quest();
+    console.log(props.user);
+    console.log(props.user.username);
   }
 
   // Close Quests and Open Items
@@ -24,7 +26,7 @@ export default function Navbar(props) {
         </Link>
         {userStatus ?
           <Link to="/questdex" onClick={() => setUserStatus(false)}>
-            <h3 className="LoginNav">Logout</h3>
+            <h3 className="LoginNav">{props.user.username} Logout</h3>
           </Link> :
           <Link to="/questdex/login">
             <h3 className="LoginNav">Login/Register</h3>
