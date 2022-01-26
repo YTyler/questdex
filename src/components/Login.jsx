@@ -23,7 +23,7 @@ export default function Login(props) {
         if (response.data) {
             props.log(true);
             props.user(response.data);
-            navigate("/questdex");
+            navigate("/");
         }
     };
 

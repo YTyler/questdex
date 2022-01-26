@@ -26,17 +26,17 @@ export default function Navbar(props) {
     return (
         <div className="Navbar">
             <div className="LeftNav">
-                <Link to="/questdex">
+                <Link to="/">
                     <h1>QuestDex</h1>
                 </Link>
                 {userStatus ? (
-                    <Link to="/questdex" onClick={logoutHandler}>
+                    <Link to="/" onClick={logoutHandler}>
                         <h3 className="LoginNav">
                             {props.user.username} Logout
                         </h3>
                     </Link>
                 ) : (
-                    <Link to="/questdex/login">
+                    <Link to="/login">
                         <h3 className="LoginNav">Login/Register</h3>
                     </Link>
                 )}
