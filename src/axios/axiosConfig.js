@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'http://questdex-env.eba-7xcqqbdr.us-east-2.elasticbeanstalk.com',
 });
