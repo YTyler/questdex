@@ -63,11 +63,11 @@ export default function Quest(props) {
                 ) : (
                     <h2>{quest.quest_name}</h2>
                 )}
-                {open && <h3>{quest.gameTitle}</h3>}
+                {/* {open && <h3>{quest.gameTitle}</h3>} */}
             </section>
             <section>
-                {open && <h3>Items Needed:</h3>}
-                {open && <h3>Notes</h3>}
+                {/* {open && <h3>Items Needed:</h3>} */}
+                {/* {open && <h3>Notes</h3>} */}
             </section>
             <h3 className="QuestEdit" onClick={() => setEdit(true)}>
                 Edit

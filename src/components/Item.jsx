@@ -50,12 +50,12 @@ export default function Item(props) {
                 ) : (
                     <h2>{item.item_name}</h2>
                 )}
-                {open && <h3>{item.gameTitle}</h3>}
+                {/* {open && <h3>{item.gameTitle}</h3>} */}
             </section>
             <section>
-                <h2>Number Needed: {item.total}</h2>
-                {open && <h3>Related Quests:</h3>}
-                {open && <h3>Notes</h3>}
+                <h2>Number Needed: {item.quantity_needed}</h2>
+                {/* {open && <h3>Related Quests:</h3>} */}
+                {/* {open && <h3>Notes</h3>} */}
             </section>
             <h3 className="QuestEdit" onClick={() => setOpenEdit(true)}>
                 Edit
