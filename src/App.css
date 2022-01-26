@@ -124,6 +124,13 @@ a:hover {
     width: 200px;
 }
 
+.Item h3 {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 /* Questpage */
 .QuestPage {
     /* background-image: url("./assets/yellow_wood_oak.jpg"); */
