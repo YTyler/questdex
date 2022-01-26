@@ -20,9 +20,9 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Routes>
-          <Route path="/questdex" >
+          <Route path="/" >
             <Route index element={<HomePage logging = {log} userObject = {userObj}/>}/>
             <Route path="login" element={<LoginPage logging = {login} user = {user}/>}/> 
           </Route>

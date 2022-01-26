@@ -186,16 +186,16 @@ a:hover {
 }
 
 /* Div that holds the button */
-.AddQuest {
+.Add {
     text-align: right;
 }
 
-.AddQuest button {
+.Add button {
     font-size: 2rem;
     font-weight: bold;
     padding: 0.6em;
     border-radius: 0.5rem;
-    border: none;    
+    border: none;
     margin: 0 3em;
     background-color: moccasin;
     cursor: pointer;
@@ -204,12 +204,12 @@ a:hover {
     transition: 0.375s;
 }
 
-.AddQuest button:hover {
+.Add button:hover {
     box-shadow: 12px 20px 15px -4px rgb(8, 8, 8),
-    -12px 20px 15px -4px rgb(8, 8, 8);
+        -12px 20px 15px -4px rgb(8, 8, 8);
 }
 
-.AddQuestForm {
+.AddForm {
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
@@ -224,28 +224,28 @@ a:hover {
         -8px 9px 5px -4px rgb(27, 27, 27);
 }
 
-.AddQuestForm input {
+.AddForm input {
     padding: 0.3em;
     font-size: 2rem;
 }
 
-.AddQuestButtons {
+.AddButtons {
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
 }
 
-.AddQuestButtons {
+.AddButtons {
     margin-top: 1em;
 }
 
-.QuestSubmit {
+.AddButtons input {
     margin: 0 4em;
     cursor: pointer;
 }
 
-.QuestCancel {
+.Cancel {
     margin: 0 4em;
     cursor: pointer;
 }
