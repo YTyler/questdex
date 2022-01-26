@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Quest from "../components/Quest";
 import axios from "../axios/axiosConfig";
 
-export default function QuestPage() {
+export default function QuestPage(props) {
     const [quests, setQuests] = useState([]);
     const [addQuest, setAddQuest] = useState(false);
     const [questName, setQuestName] = useState("");
@@ -23,14 +23,14 @@ export default function QuestPage() {
     const addQuestHandler = async () => {
         if (validQuestName) {
             try {
-                //! User Id needs to be taken from a logged in user
-                //! Will need to be updated
                 await axios.post("/quests", {
                     game_id: 1,
-                    user_id: 1,
+                    user_id: props.userId,
                     quest_name: questName,
                 });
+                console.log(quests);
                 setQuestName("");
+                setValidQuestName(false);
                 setIsLoading((prev) => !prev);
             } catch (err) {
                 console.log(err);
@@ -62,31 +62,46 @@ export default function QuestPage() {
     // Axios function for getting all quests
     useEffect(() => {
         try {
-            axios.get("/quests").then((res) => setQuests(res.data));
+            axios
+                .get("/quests")
+                .then((res) =>
+                    setQuests(
+                        res.data.filter(
+                            (quest) => quest.user_id === props.userId
+                        )
+                    )
+                );
         } catch (err) {
             console.log(err);
         }
-    }, [isLoading]);
+    }, [isLoading, props.userId]);
 
     return (
         <div className="QuestPage">
             {addQuest ? (
-                <div>
+                <div className="AddQuestForm">
                     <input
                         type="text"
                         value={questName}
                         onChange={(elem) => questNameHandler(elem.target.value)}
                         placeholder="Questname..."
                     />
-                    <input type="submit" onClick={addQuestHandler} />
-                    <input
-                        type="button"
-                        value="Cancel"
-                        onClick={() => setAddQuest(false)}
-                    />
+                    <div className="AddQuestButtons">
+                        <input
+                            className="QuestSubmit"
+                            type="submit"
+                            onClick={addQuestHandler}
+                        />
+                        <input
+                            className="QuestCancel"
+                            type="button"
+                            value="Cancel"
+                            onClick={() => setAddQuest(false)}
+                        />
+                    </div>
                 </div>
             ) : (
-                <div className="Add">
+                <div className="AddQuest">
                     <button onClick={() => setAddQuest(true)}>Add Quest</button>
                 </div>
             )}

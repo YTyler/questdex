@@ -6,21 +6,38 @@ import QuestPage from "./QuestPage";
 export default function HomePage(props) {
     const [itemsOpen, setItemsOpen] = useState(false);
     const [questsOpen, setQuestsOpen] = useState(false);
+    const [user, setUser] = useState(props.userObject);
 
     const openQuest = () => {
-        setItemsOpen(false);
-        setQuestsOpen(true);
+        if (user) {
+            setItemsOpen(false);
+            setQuestsOpen(true);
+        }
     };
 
     const openItem = () => {
+        if (user) {
+            setQuestsOpen(false);
+            setItemsOpen(true);
+        }
+    };
+
+    const closeAll = () => {
         setQuestsOpen(false);
-        setItemsOpen(true);
+        setItemsOpen(false);
+        setUser("");
     };
 
     return (
         <>
-            <Navbar status={props.logging} item={openItem} quest={openQuest} />
-            {questsOpen && <QuestPage />}
+            <Navbar
+                status={props.logging}
+                item={openItem}
+                quest={openQuest}
+                user={props.userObject}
+                logout={closeAll}
+            />
+            {questsOpen && <QuestPage userId={props.userObject.user_id} />}
             {itemsOpen && <ItemPage />}
         </>
     );

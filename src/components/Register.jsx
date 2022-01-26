@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { register } from "../axios/UserApi";
+import axios from "../axios/axiosConfig";
 
 export default function Register(props) {
     // Navigate back to home page
@@ -63,14 +63,19 @@ export default function Register(props) {
     };
 
     // Checks if all input fields are valid and then routes to home page
-    const checkRegistration = (event) => {
+    const checkRegistration = async (event) => {
         event.preventDefault();
         if (validUsername && validEmail && validPassword && passwordsMatch) {
             // Axios request for registering a user
-            const user = register(username, password, email);
+            const response = await axios.post("/user", {
+                username: username,
+                password: password,
+                email: email,
+            });
 
-            if (user) {
+            if (response.data) {
                 props.log(true);
+                props.user(response.data);
                 navigate("/");
             }
         }

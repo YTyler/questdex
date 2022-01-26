@@ -15,9 +15,13 @@ export default function LoginPage(props) {
                 <h1>{isLoggingIn ? "Login" : "Register"}</h1>
             </div>
             {isLoggingIn ? (
-                <Login log={props.logging} registerHandler={registerHandler} />
+                <Login
+                    log={props.logging}
+                    registerHandler={registerHandler}
+                    user={props.user}
+                />
             ) : (
-                <Register log={props.logging} />
+                <Register log={props.logging} user={props.user} />
             )}
         </>
     );
