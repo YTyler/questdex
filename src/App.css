@@ -209,7 +209,7 @@ a:hover {
         -12px 20px 15px -4px rgb(8, 8, 8);
 }
 
-.AddQuestForm {
+.AddForm {
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
@@ -224,28 +224,28 @@ a:hover {
         -8px 9px 5px -4px rgb(27, 27, 27);
 }
 
-.AddQuestForm input {
+.AddForm input {
     padding: 0.3em;
     font-size: 2rem;
 }
 
-.AddQuestButtons {
+.AddButtons {
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
 }
 
-.AddQuestButtons {
+.AddButtons {
     margin-top: 1em;
 }
 
-.QuestSubmit {
+.AddButtons input {
     margin: 0 4em;
     cursor: pointer;
 }
 
-.QuestCancel {
+.Cancel {
     margin: 0 4em;
     cursor: pointer;
 }

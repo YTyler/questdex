@@ -69,19 +69,21 @@ export default function ItemPage() {
     return (
         <div className="ItemPage">
             {addItem ? (
-                <div>
+                <div className="AddForm">
                     <input
                         type="text"
                         value={itemName}
                         onChange={(elem) => itemNameHandler(elem.target.value)}
                         placeholder="Itemname..."
                     />
-                    <input type="submit" onClick={addItemHandler} />
-                    <input
-                        type="button"
-                        value="Cancel"
-                        onClick={() => setAddItem(false)}
-                    />
+                    <div className="AddButtons">
+                        <input type="submit" onClick={addItemHandler} />
+                        <input
+                            type="button"
+                            value="Cancel"
+                            onClick={() => setAddItem(false)}
+                        />
+                    </div>
                 </div>
             ) : (
                 <div className="Add">

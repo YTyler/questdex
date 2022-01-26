@@ -79,21 +79,19 @@ export default function QuestPage(props) {
     return (
         <div className="QuestPage">
             {addQuest ? (
-                <div className="AddQuestForm">
+                <div className="AddForm">
                     <input
                         type="text"
                         value={questName}
                         onChange={(elem) => questNameHandler(elem.target.value)}
                         placeholder="Questname..."
                     />
-                    <div className="AddQuestButtons">
+                    <div className="AddButtons">
                         <input
-                            className="QuestSubmit"
                             type="submit"
                             onClick={addQuestHandler}
                         />
                         <input
-                            className="QuestCancel"
                             type="button"
                             value="Cancel"
                             onClick={() => setAddQuest(false)}
@@ -101,7 +99,7 @@ export default function QuestPage(props) {
                     </div>
                 </div>
             ) : (
-                <div className="AddQuest">
+                <div className="Add">
                     <button onClick={() => setAddQuest(true)}>Add Quest</button>
                 </div>
             )}
