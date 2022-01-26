@@ -8,6 +8,7 @@ export default function ItemPage() {
     const [itemName, setItemName] = useState("");
     const [validItem, setValidItem] = useState();
     const [isLoading, setIsLoading] = useState(false);
+    const [quantityNeeded, setQuantityNeeded] = useState(0);
 
     useEffect(() => {
         try {
@@ -16,6 +17,10 @@ export default function ItemPage() {
             console.log(err);
         }
     }, [isLoading]);
+
+    const itemQuantityHandler = (input) => {
+        setQuantityNeeded(input);
+    }
 
     const itemNameHandler = (input) => {
         setItemName(input);
@@ -34,12 +39,13 @@ export default function ItemPage() {
                 await axios.post("/items", {
                     game_id: 1,
                     item_name: itemName,
-                    quantity_needed: 0,
+                    quantity_needed: quantityNeeded,
                 });
             } catch (err) {
                 console.log(err);
             } finally {
                 setItemName("");
+                setQuantityNeeded(0);
                 setIsLoading((prev) => !prev);
             }
         }
@@ -75,6 +81,12 @@ export default function ItemPage() {
                         value={itemName}
                         onChange={(elem) => itemNameHandler(elem.target.value)}
                         placeholder="Itemname..."
+                    />
+                    <input
+                        type="number"
+                        value={quantityNeeded}
+                        onChange={(elem) => itemQuantityHandler(elem.target.value)}
+                        placeholder="Quantity..."
                     />
                     <div className="AddButtons">
                         <input type="submit" onClick={addItemHandler} />
