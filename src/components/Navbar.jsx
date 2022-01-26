@@ -4,54 +4,56 @@ import { Link } from "react-router-dom";
 import axios from "../axios/axiosConfig";
 
 export default function Navbar(props) {
+    const [userStatus, setUserStatus] = useState(props.status);
 
-  const [userStatus, setUserStatus] = useState(props.status);
+    // Close Items and open Quests
+    const openQuests = () => {
+        props.quest();
+    };
 
-  // Close Items and open Quests
-  const openQuests = () => {
-    props.quest();
-  }
+    // Close Quests and Open Items
+    const openItems = () => {
+        props.item();
+    };
 
-  // Close Quests and Open Items
-  const openItems = () => {
-    props.item();
-  }
+    // Axios function for logging out a user
+    const logoutHandler = async () => {
+        await axios.post(`/user/${props.user.username}`, {});
+        setUserStatus(false);
+        props.logout();
+    };
 
-  // Axios function for logging out a user
-  const logoutHandler = async () => {
-    await axios.post(`/user/${props.user.username}`, {});
-    setUserStatus(false);
-    props.logout();
-  }
+    return (
+        <div className="Navbar">
+            <div className="LeftNav">
+                <Link to="/questdex">
+                    <h1>QuestDex</h1>
+                </Link>
+                {userStatus ? (
+                    <Link to="/questdex" onClick={logoutHandler}>
+                        <h3 className="LoginNav">
+                            {props.user.username} Logout
+                        </h3>
+                    </Link>
+                ) : (
+                    <Link to="/questdex/login">
+                        <h3 className="LoginNav">Login/Register</h3>
+                    </Link>
+                )}
+            </div>
+            <nav className="RightNav">
+                {/* Quest Icon */}
+                <div className="NavButton" onClick={openQuests}>
+                    <GiSwordSpade />
+                    <h3>Quests</h3>
+                </div>
 
-  return (
-    <div className="Navbar">
-      <div className="LeftNav">
-        <Link to="/questdex">
-          <h1>QuestDex</h1>
-        </Link>
-        {userStatus ?
-          <Link to="/questdex" onClick={logoutHandler}>
-            <h3 className="LoginNav">{props.user.username} Logout</h3>
-          </Link> :
-          <Link to="/questdex/login">
-            <h3 className="LoginNav">Login/Register</h3>
-          </Link>
-        }
-      </div>
-      <nav className="RightNav">
-        {/* Quest Icon */}
-        <div className="NavButton" onClick={openQuests}>
-          <GiSwordSpade />
-          <h3>Quests</h3>
+                {/* Item Icon */}
+                <div className="NavButton" onClick={openItems}>
+                    <GiSwapBag />
+                    <h3>Items</h3>
+                </div>
+            </nav>
         </div>
-
-        {/* Item Icon */}
-        <div className="NavButton" onClick={openItems}>
-          <GiSwapBag />
-          <h3>Items</h3>
-        </div>
-      </nav>
-    </div>
-  );
+    );
 }

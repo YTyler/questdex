@@ -10,11 +10,17 @@ export default function Login(props) {
     // Axios function to log in a user
     const loginHandler = async (event) => {
         event.preventDefault();
-        const response = await axios.post('/user/login', {}, { params: {
-            username,
-            password
-        }});
-        if(response.data) {
+        const response = await axios.post(
+            "/user/login",
+            {},
+            {
+                params: {
+                    username,
+                    password,
+                },
+            }
+        );
+        if (response.data) {
             props.log(true);
             props.user(response.data);
             navigate("/questdex");
@@ -36,7 +42,11 @@ export default function Login(props) {
                 placeholder="Password"
             />
 
-            <input className="LoginRegisterButton" type="submit" value="Login" />
+            <input
+                className="LoginRegisterButton"
+                type="submit"
+                value="Login"
+            />
             <input
                 className="LoginRegisterButton"
                 type="button"
