@@ -11,7 +11,7 @@ export default function ItemPage() {
 
     useEffect(() => {
         try {
-            axios.get("/quests").then((res) => setItems(res.data));
+            axios.get("/items").then((res) => setItems(res.data));
         } catch (err) {
             console.log(err);
         }
@@ -84,7 +84,7 @@ export default function ItemPage() {
                     />
                 </div>
             ) : (
-                <div className="AddItem">
+                <div className="Add">
                     <button onClick={() => setAddItem(true)}>Add Item</button>
                 </div>
             )}

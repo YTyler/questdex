@@ -187,15 +187,15 @@ a:hover {
 }
 
 /* Div that holds the button */
-.AddQuest {
+.Add {
     text-align: right;
 }
 
-.AddQuest button {
+.Add button {
     font-size: 2rem;
     padding: 0.6em;
     border-radius: 0.5rem;
-    border: none;    
+    border: none;
     margin: 0 3em;
     background-color: moccasin;
     cursor: pointer;
@@ -204,9 +204,9 @@ a:hover {
     transition: 0.375s;
 }
 
-.AddQuest button:hover {
+.Add button:hover {
     box-shadow: 12px 20px 15px -4px rgb(8, 8, 8),
-    -12px 20px 15px -4px rgb(8, 8, 8);
+        -12px 20px 15px -4px rgb(8, 8, 8);
 }
 
 /* Login Component */
